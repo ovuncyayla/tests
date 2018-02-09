@@ -1,0 +1,6 @@
+/miotune/.nb-gradle/
+/miotune/core/build/
+.gradle/
+**/nbproject/
+/miotune/engine/build/
+/miotune/miotunegame/build/
