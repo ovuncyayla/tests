@@ -3,52 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package engine;
+package game;
 
+import engine.AbstractGameLogic;
 import engine.graphics.Mesh;
 import engine.graphics.Window;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
 
-/**
- *
- * @author spak
- */
-public class EngineTest {
-
-    @Test
-    public void testMain() throws Exception {
+public class DummyLogic extends AbstractGameLogic {
     
-        System.out.println("gameLoop");
-        String windowTitle = "Test Title";
-        AbstractGameLogic gameLogic= new TestGameLogicImpl();
-        Engine instance;
-        try {
-            instance = new Engine(windowTitle, 0, 0, true, gameLogic);
-            instance.gameLoop();
-            assertNotNull(instance);
-        } catch (Exception ex) {
-            Logger.getLogger(EngineTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private static class TestGameLogicImpl extends AbstractGameLogic {
-
-        public TestGameLogicImpl() throws Exception {
-        }
-
- 
     private int direction = 0;
 
     private float color = 0.0f;
     
     private Mesh mesh;
 
-  @Override
+    public DummyLogic() throws Exception {
+        super();
+    }
+    
+    @Override
     public void init() throws Exception {
 
         float[] positions = new float[]{
@@ -100,5 +75,5 @@ public class EngineTest {
     public void cleanup() {
         mesh.cleanUp();
     }
-}
+    
 }

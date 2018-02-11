@@ -1,4 +1,4 @@
-package engine;
+package engine.graphics;
 
 import static org.lwjgl.glfw.GLFW.*;
 import org.lwjgl.glfw.GLFWErrorCallback;
