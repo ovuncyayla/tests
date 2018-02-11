@@ -15,9 +15,9 @@ public class Engine implements Runnable {
 
     private final Timer timer;
 
-    private final AbstractGameLogic gameLogic;
+    private final IGameLogic gameLogic;
 
-    public Engine(String windowTitle, int width, int height, boolean vSync, AbstractGameLogic gameLogic) throws Exception {
+    public Engine(String windowTitle, int width, int height, boolean vSync, IGameLogic gameLogic) throws Exception {
         gameLoopThread = new Thread(this, "GAME_LOOP_THREAD");
         window = new Window(windowTitle, width, height, vSync);
         this.gameLogic = gameLogic;

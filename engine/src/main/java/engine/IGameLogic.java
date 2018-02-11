@@ -1,14 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package engine;
 
+import engine.graphics.Window;
+
+
 public interface IGameLogic {
+    
+    public void onInit() throws Exception;
+    
+    public void onCleanup();
 
-    void init() throws Exception;
-    
-    void input(Window window);
+    //public void onRender(Window window);
 
-    void update(float interval);
+    //public void onUpdate(float interval);
+
+    //public void onInput(Window window);
+
+    public abstract void init() throws Exception;
     
-    void render(Window window);
+    public abstract void input(Window window);
     
-    void cleanup();
+    public abstract void update(float interval);
+    
+    public abstract void render(Window window);
+    
+    public abstract void cleanup();
+    
+    
 }

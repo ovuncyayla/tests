@@ -5,13 +5,16 @@
  */
 package game;
 
-import engine.AbstractGameLogic;
+import engine.IGameLogic;
 import engine.graphics.Mesh;
+import engine.graphics.Renderer;
 import engine.graphics.Window;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
 
-public class DummyLogic extends AbstractGameLogic {
+public class DummyLogic implements IGameLogic {
+    
+    protected final Renderer renderer;
     
     private int direction = 0;
 
@@ -20,8 +23,21 @@ public class DummyLogic extends AbstractGameLogic {
     private Mesh mesh;
 
     public DummyLogic() throws Exception {
-        super();
+        renderer = new Renderer();
+        onInit();
     }
+    
+    @Override
+    public void onInit() throws Exception{
+        renderer.init();
+        init();
+    };
+    
+    @Override
+    public void onCleanup(){
+        renderer.cleanup();
+        cleanup();
+    };
     
     @Override
     public void init() throws Exception {

@@ -1,14 +1,14 @@
 package game;
 
 import engine.Engine;
-import engine.AbstractGameLogic;
+import engine.IGameLogic;
 
 public class Main {
 
     private static final String WINDOW_TITLE = "MioTune Game";
     
     Engine engine;
-    AbstractGameLogic gameLogic;
+    IGameLogic gameLogic;
 
     private static class WIN_SIZE {
 
