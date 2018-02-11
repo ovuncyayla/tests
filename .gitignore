@@ -1,6 +1,6 @@
-/miotune/.nb-gradle/
-/miotune/core/build/
+.nb-gradle/
+core/build/
 .gradle/
 **/nbproject/
-/miotune/engine/build/
-/miotune/miotunegame/build/
+engine/build/
+miotunegame/build/
